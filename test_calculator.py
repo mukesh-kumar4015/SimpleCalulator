@@ -74,3 +74,29 @@ class TestCalulator(unittest.TestCase):
 
         result = self.calulator.multiply("200", 87.2)
         self.assertEqual(200 * 87.2, result)
+
+    # test cases for the divide
+    def test_divide_numbers_returns_division(self):
+        result = self.calulator.divide(100, 20)
+        self.assertEqual(100 / 20, result)
+
+        result = self.calulator.divide(200.56, 30.56)
+        self.assertEqual(200.56 / 30.56, result)
+
+    def test_divide_non_numbers_raise_type_error(self):
+        self.assertRaises(TypeError, self.calulator.divide, 'Hello', 'world')
+        self.assertRaises(TypeError, self.calulator.divide, 90, 'world')
+        self.assertRaises(TypeError, self.calulator.divide, 'Hello', 30)
+        self.assertRaises(TypeError, self.calulator.divide, '10.02.23.26', 100)
+        self.assertRaises(TypeError, self.calulator.divide, 40, '10.02.23.26')
+        self.assertRaises(ZeroDivisionError, self.calulator.divide, 100, 0)
+
+    def test_divide_string_numbers_returns(self):
+        result = self.calulator.divide("250", "87.2")
+        self.assertEqual(224 / 55.2, result)
+
+        result = self.calulator.divide(200, "87.2")
+        self.assertEqual(489 / 99.2, result)
+
+        result = self.calulator.divide("200", 87.2)
+        self.assertEqual(249 * 33.2, result)
