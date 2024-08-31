@@ -8,10 +8,10 @@ class TestCalulator(unittest.TestCase):
 
     def test_add_numbers_returns_sum(self):
         result = self.calulator.add(20, 30)
-        self.assertEquals(20 + 30, result)
+        self.assertEqual(20 + 30, result)
 
         result = self.calulator.add(20.56, 30.56)
-        self.assertEquals(20.56 + 30.56, result)
+        self.assertEqual(20.56 + 30.56, result)
 
     def test_add_non_numbers_raise_type_error(self):
         self.assertRaises(TypeError, self.calulator.add, 'Hello', 'world')
@@ -22,10 +22,10 @@ class TestCalulator(unittest.TestCase):
 
     def test_add_string_numbers0_returns(self):
         result = self.calulator.add("25", "87.2")
-        self.assertEquals(25 + 87.2, result)
+        self.assertEqual(25 + 87.2, result)
 
         result = self.calulator.add(25, "87.2")
-        self.assertEquals(25 + 87.2, result)
+        self.assertEqual(25 + 87.2, result)
 
         result = self.calulator.add("25", 87.2)
-        self.assertEquals(25 + 87.2, result)
+        self.assertEqual(25 + 87.2, result)
