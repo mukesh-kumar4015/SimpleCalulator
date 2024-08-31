@@ -50,8 +50,27 @@ class TestCalulator(unittest.TestCase):
         result = self.calulator.subtract("250", "87.2")
         self.assertEqual(250 - 87.2, result)
 
-        result = self.calulator.subtract(25, "87.2")
-        self.assertEqual(25 - 87.2, result)
+    # test cases for the multiply
+    def test_multiply_numbers_returns_multiplication(self):
+        result = self.calulator.multiply(40, 30)
+        self.assertEqual(40 * 30, result)
 
-        result = self.calulator.subtract("25", 87.2)
-        self.assertEqual(25 - 87.2, result)
+        result = self.calulator.multiply(200.56, 30.56)
+        self.assertEqual(200.56 * 30.56, result)
+
+    def test_multiply_non_numbers_raise_type_error(self):
+        self.assertRaises(TypeError, self.calulator.multiply, 'Hello', 'world')
+        self.assertRaises(TypeError, self.calulator.multiply, 90, 'world')
+        self.assertRaises(TypeError, self.calulator.multiply, 'Hello', 30)
+        self.assertRaises(TypeError, self.calulator.multiply, '10.02.23.26', 100)
+        self.assertRaises(TypeError, self.calulator.multiply, 40, '10.02.23.26')
+
+    def test_multiply_string_numbers_returns(self):
+        result = self.calulator.multiply("250", "87.2")
+        self.assertEqual(250 * 87.2, result)
+
+        result = self.calulator.multiply(200, "87.2")
+        self.assertEqual(200 * 87.2, result)
+
+        result = self.calulator.multiply("200", 87.2)
+        self.assertEqual(200 * 87.2, result)
