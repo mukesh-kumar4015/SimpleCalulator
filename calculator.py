@@ -1,6 +1,6 @@
 class Calulator:
     def add(self, x, y):
-        pass
+        return x + y # it is a primitive solution 
 
     def subtract(self, x, y):
         pass
