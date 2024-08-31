@@ -45,11 +45,5 @@ class Calulator:
             if not y.replace('.', '', 1).isnumeric():
                 raise TypeError
             y = float(y)
-        if y == 0:
-            raise ZeroDivisionError("second parameter cannot be 0")
         return x / y
 
-
-c = Calulator()
-r = c.divide(100, 0)
-print(r)

@@ -14,6 +14,16 @@ class TestCalulator(unittest.TestCase):
         result = self.calulator.add(20.56, 30.56)
         self.assertEqual(20.56 + 30.56, result)
 
+    def test_add_with_negative_numbers(self):
+        result = self.calulator.add(-20, 30)
+        self.assertEqual(-20 + 30, result)
+
+        result = self.calulator.add(-20, -30)
+        self.assertEqual(-20 + (-30), result)
+
+        result = self.calulator.add(20, -30)
+        self.assertEqual(20 + (-30), result)
+
     def test_add_non_numbers_raise_type_error(self):
         self.assertRaises(TypeError, self.calulator.add, 'Hello', 'world')
         self.assertRaises(TypeError, self.calulator.add, 10, 'world')
@@ -39,6 +49,16 @@ class TestCalulator(unittest.TestCase):
         result = self.calulator.subtract(200.56, 30.56)
         self.assertEqual(200.56 - 30.56, result)
 
+    def test_subtract_with_negative_numbers(self):
+        result = self.calulator.subtract(-20, 30)
+        self.assertEqual(-20 - 30, result)
+
+        result = self.calulator.subtract(-20, -30)
+        self.assertEqual(-20 - (-30), result)
+
+        result = self.calulator.subtract(20, -30)
+        self.assertEqual(20 - (-30), result)
+
     def test_subtract_non_numbers_raise_type_error(self):
         self.assertRaises(TypeError, self.calulator.subtract, 'Hello', 'world')
         self.assertRaises(TypeError, self.calulator.subtract, 10, 'world')
@@ -57,6 +77,16 @@ class TestCalulator(unittest.TestCase):
 
         result = self.calulator.multiply(200.56, 30.56)
         self.assertEqual(200.56 * 30.56, result)
+
+    def test_multiply_with_negative_numbers(self):
+        result = self.calulator.multiply(-20, 30)
+        self.assertEqual(-20 * 30, result)
+
+        result = self.calulator.multiply(-20, -30)
+        self.assertEqual(-20 * (-30), result)
+
+        result = self.calulator.multiply(20, -30)
+        self.assertEqual(20 * (-30), result)
 
     def test_multiply_non_numbers_raise_type_error(self):
         self.assertRaises(TypeError, self.calulator.multiply, 'Hello', 'world')
@@ -82,6 +112,16 @@ class TestCalulator(unittest.TestCase):
 
         result = self.calulator.divide(200.56, 30.56)
         self.assertEqual(200.56 / 30.56, result)
+
+    def test_divide_with_negative_numbers(self):
+        result = self.calulator.divide(-20, 30)
+        self.assertEqual(-20 / 30, result)
+
+        result = self.calulator.divide(-20, -30)
+        self.assertEqual(-20 / (-30), result)
+
+        result = self.calulator.divide(20, -30)
+        self.assertEqual(20 / (-30), result)
 
     def test_divide_non_numbers_raise_type_error(self):
         self.assertRaises(TypeError, self.calulator.divide, 'Hello', 'world')
