@@ -1,12 +1,12 @@
 class Calulator:
-    def add(self):
+    def add(self, x, y):
         pass
 
-    def subtract(self):
+    def subtract(self, x, y):
         pass
 
-    def multiply(self):
+    def multiply(self, x, y):
         pass
 
-    def divide(self):
+    def divide(self, x, y):
         pass
