@@ -35,5 +35,21 @@ class Calulator:
             y = float(y)
         return x * y
 
-    def divide(self, x, y):
-        pass
+    @staticmethod
+    def divide(x, y):
+        if not isinstance(x, int) and not isinstance(x, float):
+            if not x.replace('.', '', 1).isnumeric():
+                raise TypeError
+            x = float(x)
+        if not isinstance(y, int) and not isinstance(y, float):
+            if not y.replace('.', '', 1).isnumeric():
+                raise TypeError
+            y = float(y)
+        if y == 0:
+            raise ZeroDivisionError("second parameter cannot be 0")
+        return x / y
+
+
+c = Calulator()
+r = c.divide(100, 0)
+print(r)

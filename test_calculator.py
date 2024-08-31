@@ -85,18 +85,18 @@ class TestCalulator(unittest.TestCase):
 
     def test_divide_non_numbers_raise_type_error(self):
         self.assertRaises(TypeError, self.calulator.divide, 'Hello', 'world')
-        self.assertRaises(TypeError, self.calulator.divide, 90, 'world')
-        self.assertRaises(TypeError, self.calulator.divide, 'Hello', 30)
-        self.assertRaises(TypeError, self.calulator.divide, '10.02.23.26', 100)
-        self.assertRaises(TypeError, self.calulator.divide, 40, '10.02.23.26')
+        self.assertRaises(TypeError, self.calulator.divide, 99, 'world')
+        self.assertRaises(TypeError, self.calulator.divide, 'Hello', 66)
+        self.assertRaises(TypeError, self.calulator.divide, '10.02.23.26', 256)
+        self.assertRaises(TypeError, self.calulator.divide, 225, '10.02.23.26')
         self.assertRaises(ZeroDivisionError, self.calulator.divide, 100, 0)
 
     def test_divide_string_numbers_returns(self):
-        result = self.calulator.divide("250", "87.2")
+        result = self.calulator.divide("224", "55.2")
         self.assertEqual(224 / 55.2, result)
 
-        result = self.calulator.divide(200, "87.2")
+        result = self.calulator.divide(489, "99.2")
         self.assertEqual(489 / 99.2, result)
 
-        result = self.calulator.divide("200", 87.2)
-        self.assertEqual(249 * 33.2, result)
+        result = self.calulator.divide("249", 33.2)
+        self.assertEqual(249 / 33.2, result)
